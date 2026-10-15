@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FORMÉ — Your wardrobe. Reimagined.</title>
+  <meta name="description" content="FORMÉ turns the clothes you already own into outfits you'll actually wear. Private, on your iPhone." />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <nav class="nav" aria-label="Main">
+    <span class="logo">FORMÉ</span>
+    <a href="#add">Add</a><a href="#looks">Looks</a><a href="#plan">Plan</a><a href="#stylist">Stylist</a>
+    <a href="#download" class="dark-pill">Get the app</a>
+  </nav>
+
+  <header class="hero">
+    <p class="chip">Wardrobe · Outfits · Stylist</p>
+    <h1>Your wardrobe.<br/>Reimagined.</h1>
+    <p class="lead">Turn the clothes you already own into outfits you’ll actually wear.</p>
+    <div class="ctas"><a class="dark-pill big" href="#download">Get the app</a><a class="ghost big" href="#add">See how it works</a></div>
+
+    <div class="stage" id="stage">
+      <div class="float f1 card-ui weather"><b>72°</b><span>Clear · light layers</span></div>
+      <div class="float f2 card-ui mini-plan"><span class="k">This week</span><div class="strip" id="heroStrip"></div></div>
+      <div class="phone" id="phone">
+        <div class="screen">
+          <div class="sb"><span>9:41</span><span class="notch"></span><span>􀙇</span></div>
+          <div class="app">
+            <div class="greet">Good evening, Neel</div>
+            <div class="days" id="phoneDays"></div>
+            <div class="hero-card">
+              <div class="hc-top"><span>Today’s look</span><b>Planner</b></div>
+              <div class="stack" id="phoneStack"></div>
+              <div class="hc-btn">Wear this today</div>
+            </div>
+            <div class="rp"><span>Recent pieces</span><div class="thumbs" id="phoneThumbs"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="float f3 card-ui chat-mini"><div class="bub me">What goes with my black jeans?</div><div class="bub ai">The white polo and your black sneakers.</div></div>
+      <div class="float f4 card-ui look-chip"><div class="stack tiny" id="chipStack"></div><span>Look 4 · Everyday</span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel" id="add">
+      <div class="copy"><span class="num">01</span><h2>Add clothes<br/>in seconds.</h2><p>Snap a photo, or lay a pile on your bed. FORMÉ lifts out every piece and files it for you, all on your phone.</p></div>
+      <div class="visual grid-vis" id="gridVis"></div>
+    </section>
+
+    <section class="panel rev" id="looks">
+      <div class="copy"><span class="num">02</span><h2>Looks that<br/>come together.</h2><p>One clean picture per outfit. Swap a piece, mark what you wore, and share the ones you love.</p></div>
+      <div class="visual looks-vis">
+        <div class="stack big-stack" id="bigStack"></div>
+        <div class="float-lbl l1">Swap a piece</div><div class="float-lbl l2">I wore this today</div><div class="float-lbl l3">Share</div>
+      </div>
+    </section>
+
+    <section class="panel" id="plan">
+      <div class="copy"><span class="num">03</span><h2>Plan your<br/>whole month.</h2><p>See every day at a glance. Tap a day to choose a look, or let FORMÉ suggest one from today’s weather.</p></div>
+      <div class="visual cal-vis"><div class="cal-head"><b>October 2026</b><span>13 days planned</span></div><div class="cal" id="cal"></div></div>
+    </section>
+
+    <section class="panel rev" id="stylist">
+      <div class="copy"><span class="num">04</span><h2>Ask what goes<br/>with your jeans.</h2><p>Your Stylist answers from the clothes you really own, and runs on your iPhone. No server, no account.</p></div>
+      <div class="visual chat-vis">
+        <div class="bub me">What goes with my black jeans?</div>
+        <div class="bub ai">The white polo and your black sneakers. Clean, easy, and it works in today’s weather.</div>
+        <div class="stack mid" id="chatStack"></div>
+        <div class="acts"><span>Plan today</span><span>Plan tomorrow</span><span class="solid">Save as a look</span></div>
+      </div>
+    </section>
+
+    <section class="styles">
+      <h2>Find your style.</h2>
+      <p class="sub">Pick the looks that feel like you. FORMÉ builds from there.</p>
+      <div class="style-row" id="styleRow"></div>
+    </section>
+
+    <section class="private">
+      <span class="chip dark">Private by design</span>
+      <h2>Your closet never leaves your phone.</h2>
+      <p>No account. No ads tracking you. The Stylist runs on-device with Apple’s model.</p>
+    </section>
+
+    <section class="cta" id="download">
+      <h2 class="wordmark">FORMÉ</h2>
+      <p>Your wardrobe. Reimagined.</p>
+      <a class="light-pill big" href="#">Coming soon to the App Store</a>
+      <footer>© 2026 FORMÉ · <a href="mailto:neel@vermaclub.com">neel@vermaclub.com</a> · <a href="privacy.html">Privacy &amp; Terms</a></footer>
+    </section>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
