@@ -34,9 +34,6 @@ for (let d = 1; d <= 31; d++) {
 }
 set('cal', cal)
 
-// styles
-const styles = [['oldMoney', 'Old money', '#E9E0CC'], ['y2k', 'Y2K', '#DCE3F5'], ['streetwear', 'Streetwear', '#CFCFCA'], ['minimal', 'Minimal', '#ECEAE5'], ['cleanGirl', 'Clean girl', '#F2ECE2'], ['sporty', 'Sporty', '#E3E7EE']]
-set('styleRow', styles.map(([n, t, bg]) => `<div class="style" style="background:${bg}"><img src="./s/${n}.png" alt="${t}"><b>${t}</b></div>`).join(''))
 
 // ---- motion
 if (!reduce) {
@@ -64,5 +61,4 @@ gsap.from('.float-lbl', { opacity: 0, y: 16, scale: 0.9, duration: 0.6, stagger:
 gsap.from('#bigStack', { y: 60, rotateX: 14, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '#looks', start: 'top 70%' } })
 gsap.from('#cal .d', { opacity: 0, scale: 0.8, duration: 0.5, stagger: 0.02, scrollTrigger: { trigger: '#cal', start: 'top 80%' } })
 gsap.from('.chat-vis > *', { opacity: 0, y: 24, duration: 0.7, stagger: 0.25, scrollTrigger: { trigger: '#stylist', start: 'top 65%' } })
-gsap.from('.style', { opacity: 0, y: 50, rotateX: 25, duration: 0.8, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.styles', start: 'top 75%' } })
 gsap.utils.toArray('.copy').forEach((c) => gsap.from(c.children, { opacity: 0, y: 24, duration: 0.8, stagger: 0.1, scrollTrigger: { trigger: c, start: 'top 80%' } }))
