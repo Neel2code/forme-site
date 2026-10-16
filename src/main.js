@@ -8,29 +8,29 @@ const P = (n) => `./p/${n}.png`
 // outfit stack: top, bottoms, shoes in the same arrangement as the app
 const stack = (top, bot, shoe) => `<img class="b" src="${P(bot)}" alt=""><img class="t" src="${P(top)}" alt=""><img class="s" src="${P(shoe)}" alt="">`
 const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html }
-set('phoneStack', stack('henley', 'ljeans', 'shoes'))
-set('chipStack', stack('tee', 'bjeans', 'shoes'))
-set('bigStack', stack('henley', 'ljeans', 'shoes'))
-set('chatStack', stack('tee', 'bjeans', 'shoes'))
+set('phoneStack', stack('sweater', 'chinos', 'sneaker'))
+set('chipStack', stack('tee', 'jeans', 'sneaker'))
+set('bigStack', stack('sweater', 'chinos', 'sneaker'))
+set('chatStack', stack('tee', 'jeans', 'sneaker'))
 document.getElementById('phoneStack').parentElement.querySelector('.stack').classList.add('mini')
 
 // phone: day strip + recent pieces
 set('phoneDays', ['W14', 'T15', 'F16', 'S17', 'S18', 'M19', 'T20'].map((d, i) => `<div class="${i ? '' : 'on'}">${d[0]}<b>${d.slice(1)}</b></div>`).join(''))
-set('phoneThumbs', ['tee', 'bjeans', 'shoes'].map((n) => `<span><img src="${P(n)}" alt=""></span>`).join(''))
+set('phoneThumbs', ['tee', 'jeans', 'sneaker'].map((n) => `<span><img src="${P(n)}" alt=""></span>`).join(''))
 set('heroStrip', Array.from({ length: 7 }, (_, i) => `<i class="${i === 0 ? 'on' : ''}"></i>`).join(''))
 
 // add: the pieces fall into labelled tiles
-const items = [['tee', 'Top'], ['henley', 'Top'], ['bjeans', 'Bottoms'], ['joggers', 'Bottoms'], ['shorts', 'Bottoms'], ['shoes', 'Shoes']]
+const items = [['tee', 'Top'], ['sweater', 'Top'], ['jeans', 'Bottoms'], ['chinos', 'Bottoms'], ['hoodie', 'Top'], ['sneaker', 'Shoes']]
 set('gridVis', items.map(([n, l]) => `<div class="tile"><img src="${P(n)}" alt="${l}"><span>${l}</span></div>`).join(''))
 
 // month calendar, October 2026 (the 1st is a Thursday)
-const combos = [['henley', 'ljeans'], ['tee', 'bjeans'], ['henley', 'shorts'], ['tee', 'joggers'], ['henley', 'bjeans']]
+const combos = [['sweater', 'chinos'], ['tee', 'jeans'], ['sweater', 'hoodie'], ['tee', 'chinos'], ['sweater', 'jeans']]
 const planned = new Set([2, 5, 6, 9, 12, 13, 14, 16, 19, 21, 23, 26, 28])
 let cal = ['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d) => `<div class="h">${d}</div>`).join('')
 cal += '<div></div>'.repeat(4)
 for (let d = 1; d <= 31; d++) {
   const has = planned.has(d), c = combos[d % combos.length]
-  cal += `<div class="d ${has ? 'has' : ''} ${d === 14 ? 'today' : ''}">${d}${has && d !== 14 ? `<img class="a" src="${P(c[0])}" alt=""><img class="c" src="${P(c[1])}" alt="">` : ''}${d === 14 ? `<img class="a" src="${P('henley')}" alt=""><img class="c" src="${P('ljeans')}" alt="">` : ''}</div>`
+  cal += `<div class="d ${has ? 'has' : ''} ${d === 14 ? 'today' : ''}">${d}${has && d !== 14 ? `<img class="a" src="${P(c[0])}" alt=""><img class="c" src="${P(c[1])}" alt="">` : ''}${d === 14 ? `<img class="a" src="${P('sweater')}" alt=""><img class="c" src="${P('chinos')}" alt="">` : ''}</div>`
 }
 set('cal', cal)
 
